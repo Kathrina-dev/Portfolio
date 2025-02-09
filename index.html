@@ -4,64 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kathrina Elangbam</title>
-    <link rel="stylesheet" href="modifiedStyle.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
 </head>
-<body>
-    <div class="container">
-        <div class="top">
-            <div class="name">
-                <p><i class="firstname">KATHRINA</i> <b>ELANGBAM</b></p>
+<body class="bg-[#e6beec] min-h-screen w-full">
+    <div class="h-screen w-full flex-col p-7">
 
+        <!-- TOP -->
+        <div class="min-h-[15%] w-full bg-[#da9fe3] mb-2 p-4 flex items-center justify-between text-xl sm:text-2xl md:text-3xl rounded-2xl">
+            <div>
+                <p>
+                    <i class="font-[300]">KATHRINA</i> 
+                    <b>ELANGBAM</b>
+                </p>
             </div>
-            <div class="links">
-                <a href="" class="projects-page" style="padding: 3px;">Projects</a>
-                <a href="" class="about-page" style="padding: 3px;">About</a>
-                <a href="" class="contact-info" style="padding: 3px;">Contact</a>
-                
+            <div class="text-[#7f2cb0]">
+                <a href="" class="p-3">Projects</a>
+                <a href="" class="p-3">About</a>
+                <a href="" class="p-3">Contact</a>
             </div>
         </div>
 
-        <div class="bottom">
-            <div class="left">
-                <div class="top-half">
-                    <div class="typewriter">
-                        <span id="displayMessage">
-                            <script defer src="main.js"></script>
-                        </span>
+        <!-- BOTTOM -->
+        <div class="h-[80%] w-full mt-2 grid grid-cols-1 sm:grid-cols-[2fr,1fr]">
+
+            <!-- LEFT -->
+            <div class="h-full w-full flex-col pr-1">
+
+                <!-- LEFT-TOP -->
+                <div class="h-3/5 w-full flex flex-col sm:flex-row justify-between pr-2 pt-3 pb-5">
+
+                    <!-- LEFT-TOP-TYPEWRITER -->
+                    <div class="h-full w-full sm:w-[68%] bg-[#da9fe3] rounded-2xl content-center transition-all duration-500 ease-in-out text-4xl sm:text-5xl lg:text-7xl overflow-hidden">
+                        hello
                     </div>
-                    <div class="avatar">
-                        <img src="Images/avatar.jpeg" class="image">
+
+                    <!-- LEFT-TOP-IMAGE -->
+                    <div class="h-full w-full sm:w-[30%] bg-[#da9fe3] rounded-2xl transition-all duration-500 ease-in-out">
+                        <img src="Images/avatar.jpeg" class="h-full w-full object-cover" style="mask-image: radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0.3) 90%, rgba(0,0,0,0) 100%);
+                        -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0.3) 90%, rgba(0,0,0,0) 100%);">
                     </div>
                 </div>
-                <div class="bottom-half">
-                    <div class="intro">
-                        <h1>Hey there!</h1>
-                        <p>
-                            I’m Kathrina, an aspiring software engineer currently studying Computer Science and Engineering at VIT-AP. I have a deep passion for technology and fascinated by the endless possibilities it holds for the future.
-                    </div>
-                    <div class="collaborate">
-                        <div class="arrow">
-                            <img src="Images/right-up.png">
-                        </div>
-                        <h1>Contact Me</h1>
-                        <p>
-                            I love working on tech projects and would be excited to collaborate, so feel free to reach out! And don’t forget to check out my projects while you’re here.
-                        </p>
 
+                <!-- LEFT-BOTTOM -->
+                <div class="h-2/5 w-full flex flex-col sm:flex-row justify-between pr-2 gap-4">
+
+                    <!-- LEFT-BOTTOM-INTRO -->
+                    <div class="h-full w-full sm:w-[49%] bg-[#da9fe3] p-7 rounded-2xl text-base sm:text-lg md:text-xl transition-all duration-500 ease-in-out">
+                        <h1 class="text-2xl">Hey there!</h1>
+                        <p>
+                            I’m Kathrina, an aspiring software engineer currently studying Computer Science and Engineering at VIT-AP. I have a deep passion for technology and am fascinated by the endless possibilities it holds for the future.
+                        </p>
                     </div>
+
+                    <!-- LEFT-BOTTOM-COLLAB -->
+                    <div class="h-full w-full sm:w-[48.5%] bg-[#da9fe3] p-7 rounded-2xl text-base sm:text-lg md:text-xl transition-all duration-500 ease-in-out grid grid-cols-[1fr,auto] items-start">
+                        <div class="z-10">
+                            <h1 class="text-2xl">Contact Me</h1>
+                            <p>
+                                I love working on tech projects and would be excited to collaborate, so feel free to reach out! And don’t forget to check out my projects while you’re here.
+                            </p>
+                        </div>
+                        <img src="Images/right-up.png" class="h-12 w-12 object-cover -mt-4 -mr-6">
+                    </div>
+                    
                 </div>                
             </div>
-            <div class="right">
-                <div class="skills">
 
-                </div>
-                <div class="shortcut">
-                    <a href="">Git-hub</a>
-                    <a href="">LinkedIN</a>
+            <!-- RIGHT -->
+            <div class="h-full w-full flex flex-col gap-4 pl-2 pt-2 pb-2 justify-between">
+
+                <!-- RIGHT-TOP -->
+                <div class="h-full sm:h-4/5 w-full bg-[#da9fe3] rounded-2xl transition-all duration-500 ease-in-out"></div>
+            
+                <!-- RIGHT-BOTTOM -->
+                <div class="h-[20%] w-full bg-[#da9fe3] pl-2 pt-2 pb-2 rounded-2xl flex items-center justify-around text-[20px] sm:text-[30px] transition-all duration-500 ease-in-out text-[#7f2cb0]">
+                    <a href="">GitHub</a>
+                    <a href="">LinkedIn</a>
                     <a href="">Instagram</a>
                 </div>
             </div>
+            
         </div>
     </div>
 </body>
+
 </html>
