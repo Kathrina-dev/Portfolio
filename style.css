@@ -287,6 +287,12 @@ body
                 animation: bloomEffect 0.8s ease-out forwards;
                 opacity: 0;
                 animation-delay: 1.2s;
+                a:link,
+                a:visited,
+                a:hover,
+                a:active {
+                color: #5b1e90;
+                }
             }
             
             .shortcut:hover
