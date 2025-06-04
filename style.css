@@ -75,47 +75,45 @@ body
                 padding-top: 7px;
                 padding-bottom: 7px;
 
-                .typewriter
-                {
+                .typewriter {
                     height: 100%;
                     width: 67%;
                     background: #da9fe3;
-                    padding-right: 50px;
-                    padding-top: 7px;
-                    padding-bottom: 7px;
-                    padding-left: 30px;
+                    padding: 7px 50px 7px 30px;
                     border-radius: 10px;
                     align-content:center;
                     white-space: normal;
                     display: inline-block;
                     transition: 0.5s all ease-in-out;
-                    /* animation: cursor .3s step-end infinite alternate; */
                     font-size: 73px;
-                    
-                    span{
-                        font-weight: 700;
-                        background: linear-gradient(to right, #c134da, #3c253f);
-                        -webkit-background-clip: text;
-                        color: transparent;
-                        font-family: "Poppins", serif;
-                        font-size: 60px;
-
-                        border-right: 3px solid ;
-                        white-space: normal;
-                        overflow: hidden;
-                        width: 0; 
-                        animation: cursor .3s step-end infinite
-                    }
-                    /* span
-                    {
-                        font-size: 50px;
-                        border-right: 3px solid ;
-                        white-space: normal;
-                        overflow: hidden;
-                        width: 0; 
-                        animation: cursor .3s step-end infinite alternate; */
-                    /* } */
+                    overflow: hidden;
+                    animation: bloomEffect 0.8s ease-out forwards;
+                    opacity: 0;
                 }
+                .displayMessage {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    display: inline-block;
+                    animation: typewriter 4s steps(40) 1s 1 normal both;
+                    border-right: 3px solid black;
+                }
+                
+                .typewriter i {
+                    font-style: italic;
+                    font-size: 60px;
+                    font-family: "Afacad Flux", sans-serif;
+                    color: #000;
+                }
+
+                .typewriter span
+                {
+                    font-weight: 700;
+                    background: linear-gradient(to right, #c134da, #3c253f);
+                    -webkit-background-clip: text;
+                    color: transparent;
+                    font-family: "Poppins", serif;
+                    font-size: 60px;
+                }                    
                 
                 .typewriter:hover
                 {
@@ -124,7 +122,7 @@ body
                     transition: 0.5s all ease-in-out;
 
                 }
-                
+
                 .avatar
                 {
                     height: 100%;
@@ -132,7 +130,9 @@ body
                     background: #da9fe3;
                     border-radius: 10px;
                     transition: 0.5s all ease-in-out;
-                    
+                    animation: bloomEffect 0.8s ease-out forwards;
+                    opacity: 0;
+                    animation-delay: 0.4s;
                     .image{
                         width: 100%;
                         height:100%;
@@ -171,8 +171,9 @@ body
                     font-size: 19px;
                     align-content: end;
                     transition: 0.5s all ease-in-out;
-
-
+                    animation: bloomEffect 0.8s ease-out forwards;
+                    opacity: 0;
+                    animation-delay: 2s;
                 }
                 
                 .intro:hover
@@ -192,7 +193,9 @@ body
                     font-size: 19px;
                     align-content: end;
                     transition: 0.5s all ease-in-out;
-
+                    animation: bloomEffect 0.8s ease-out forwards;
+                    opacity: 0;
+                    animation-delay: 1.6s;
                     img
                     {
                         justify-content:end;
@@ -216,6 +219,7 @@ body
         {
             height: 100%;
             width: 100%;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
             padding-left: 7px;
@@ -227,18 +231,36 @@ body
             {
                 height: 80%;
                 width: 100%;
+                overflow: hidden;
                 background:  #da9fe3;
                 padding-left: 7px;
                 padding-top: 7px;
                 padding-bottom: 7px;
                 border-radius: 10px;
                 transition: 0.5s all ease-in-out;
+                animation: bloomEffect 0.8s ease-out forwards;
+                opacity: 0;
+                animation-delay: 0.8s;
+                .carousel {
+                    display: flex;
+                    flex-direction: column;
+                    animation: scroll 15s linear infinite;
+                    .slide {
+                        margin: 10px;
+                        color: #5b1e90;
+                        font-size: 30px;
+                        font-weight: bold;
+                        padding: 40px 20px;
+                        border-radius: 12px;
+                        text-align: center;
+                    }
+                }
             }
             
             .skills:hover
             {
                 transform: scale(1.005);
-                box-shadow: 0 10px 20px rgba(116, 4, 147, 0.636);
+                box-shadow: 0 7px 7px rgba(116, 4, 147, 0.636);
                 transition: 0.5s all ease-in-out;
             }
             
@@ -256,23 +278,38 @@ body
                 justify-content:space-around;
                 font-size: 30px;
                 transition: 0.5s all ease-in-out;
-                
+                animation: bloomEffect 0.8s ease-out forwards;
+                opacity: 0;
+                animation-delay: 1.2s;
             }
             
             .shortcut:hover
             {
                 transform: scale(1.005);
-                box-shadow: 0 10px 20px rgba(116, 4, 147, 0.636);
+                box-shadow: 0 7px 7px rgba(116, 4, 147, 0.636);
                 transition: 0.5s all ease-in-out;
             }
         }
     }
 }
 
-@keyframes cursor {
-    50% {
-        border-color: transparent;
+@keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes bloomEffect {
+    0% {
+        transform: translate(0, 0) scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0,0) scale(1);
+        opacity: 1;
     }
 }
 
-
+@keyframes scroll {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-50%); }
+}
