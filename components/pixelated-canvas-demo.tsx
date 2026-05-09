@@ -24,12 +24,12 @@ export default function PixelatedCanvasDemo() {
   }, []);
 
   return (
-    <div ref={containerRef} className="mt-8 w-full max-w-125">
+    <div ref={containerRef} className="w-full max-w-125">
       <PixelatedCanvas
         src="/avatar.jpeg"
         width={canvasSize}
         height={canvasSize}
-        cellSize={6}
+        cellSize={4}
         dotScale={0.9}
         shape="square"
         backgroundColor="#000000"
