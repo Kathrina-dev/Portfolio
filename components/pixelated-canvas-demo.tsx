@@ -34,7 +34,7 @@ export default function PixelatedCanvasDemo() {
         shape="square"
         backgroundColor="#000000"
         dropoutStrength={0.1}
-        interactive
+        interactive={false}
         responsive
         distortionStrength={3}
         distortionRadius={80}

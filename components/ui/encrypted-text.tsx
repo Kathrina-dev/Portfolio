@@ -4,7 +4,7 @@ import { motion, useInView } from "motion/react";
 import { cn } from "@/lib/utils";
 
 type EncryptedTextProps = {
-  text: string;
+  texts: string[];
   className?: string;
   /**
    * Time in milliseconds between revealing each subsequent real character.
@@ -22,6 +22,8 @@ type EncryptedTextProps = {
   encryptedClassName?: string;
   /** CSS class for styling the revealed characters */
   revealedClassName?: string;
+  /** When using texts array, duration to display each text before cycling (ms). Defaults to 3000ms. */
+  cycleDelayMs?: number;
 };
 
 const DEFAULT_CHARSET =
@@ -46,36 +48,53 @@ function generateGibberishPreservingSpaces(
 }
 
 export const EncryptedText: React.FC<EncryptedTextProps> = ({
-  text,
+  texts,
   className,
   revealDelayMs = 50,
   charset = DEFAULT_CHARSET,
   flipDelayMs = 50,
   encryptedClassName,
   revealedClassName,
+  cycleDelayMs = 3000,
 }) => {
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true });
   const [isClient, setIsClient] = useState(false);
+  const [currentTextIndex, setCurrentTextIndex] = useState(0);
 
   const [revealCount, setRevealCount] = useState<number>(0);
   const animationFrameRef = useRef<number | null>(null);
   const startTimeRef = useRef<number>(0);
   const lastFlipTimeRef = useRef<number>(0);
+  const currentText = texts[currentTextIndex];
   const scrambleCharsRef = useRef<string[]>(
-    text ? generateGibberishPreservingSpaces(text, charset).split("") : [],
+    currentText ? generateGibberishPreservingSpaces(currentText, charset).split("") : [],
   );
 
   useEffect(() => {
     setIsClient(true);
   }, []);
 
+  
+  // Cycle through texts if array is provided
+  useEffect(() => {
+    if (!texts || texts.length === 0 || !isClient) return;
+
+    const textDuration = cycleDelayMs;
+    const interval = setInterval(() => {
+      setCurrentTextIndex((prev) => (prev + 1) % texts.length);
+      setRevealCount(0);
+    }, textDuration);
+
+    return () => clearInterval(interval);
+  }, [texts, cycleDelayMs, isClient]);
+
   useEffect(() => {
     if (!isInView || !isClient) return;
 
     // Reset state for a fresh animation whenever dependencies change
-    const initial = text
-      ? generateGibberishPreservingSpaces(text, charset)
+    const initial = currentText
+      ? generateGibberishPreservingSpaces(currentText, charset)
       : "";
     scrambleCharsRef.current = initial.split("");
     startTimeRef.current = performance.now();
@@ -88,7 +107,7 @@ export const EncryptedText: React.FC<EncryptedTextProps> = ({
       if (isCancelled) return;
 
       const elapsedMs = now - startTimeRef.current;
-      const totalLength = text.length;
+      const totalLength = currentText.length;
       const currentRevealCount = Math.min(
         totalLength,
         Math.floor(elapsedMs / Math.max(1, revealDelayMs)),
@@ -105,7 +124,7 @@ export const EncryptedText: React.FC<EncryptedTextProps> = ({
       if (timeSinceLastFlip >= Math.max(0, flipDelayMs)) {
         for (let index = 0; index < totalLength; index += 1) {
           if (index >= currentRevealCount) {
-            if (text[index] !== " ") {
+            if (currentText[index] !== " ") {
               scrambleCharsRef.current[index] =
                 generateRandomCharacter(charset);
             } else {
@@ -127,9 +146,9 @@ export const EncryptedText: React.FC<EncryptedTextProps> = ({
         cancelAnimationFrame(animationFrameRef.current);
       }
     };
-  }, [isInView, isClient, text, revealDelayMs, charset, flipDelayMs]);
+  }, [isInView, isClient, currentText, revealDelayMs, charset, flipDelayMs]);
 
-  if (!text) return null;
+  if (!currentText) return null;
 
   // Only render the animated version on client to prevent hydration mismatch
   if (!isClient) {
@@ -137,10 +156,10 @@ export const EncryptedText: React.FC<EncryptedTextProps> = ({
       <motion.span
         ref={ref}
         className={cn(className)}
-        aria-label={text}
+        aria-label={currentText}
         role="text"
       >
-        {text}
+        {currentText}
       </motion.span>
     );
   }
@@ -149,10 +168,10 @@ export const EncryptedText: React.FC<EncryptedTextProps> = ({
     <motion.span
       ref={ref}
       className={cn(className)}
-      aria-label={text}
+      aria-label={currentText}
       role="text"
     >
-      {text.split("").map((char, index) => {
+      {currentText.split("").map((char, index) => {
         const isRevealed = index < revealCount;
         const displayChar = isRevealed
           ? char
