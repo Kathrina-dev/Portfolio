@@ -24,7 +24,7 @@ export default function PixelatedCanvasDemo() {
   }, []);
 
   return (
-    <div ref={containerRef} className="w-full max-w-125">
+    <div ref={containerRef} className="w-full xl:ml-25 max-w-100 lg:max-w-125">
       <PixelatedCanvas
         src="/avatar.jpeg"
         width={canvasSize}

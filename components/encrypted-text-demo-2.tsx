@@ -5,14 +5,14 @@ import React from "react";
 
 export default function EncryptedTextDemoSecond() {
   const statements = [
-    "Hello I'm Kathrina",
+    "Hi! I'm Kathrina",
     "I'm a developer",
-    "I build cool things",
-    "Welcome to my portfolio",
+    "I make cool stuff",
+    "Welcome",
   ];
 
   return (
-    <p className="mx-auto max-w-lg py-8 flex justify-center text-center text-3xl bg-black">
+    <div className="w-full max-w-lg py-8 flex justify-center items-center align-middle text-center text-3xl bg-black px-4">
       <EncryptedText
         texts={statements}
         encryptedClassName="text-neutral-300"
@@ -20,6 +20,6 @@ export default function EncryptedTextDemoSecond() {
         revealDelayMs={50}
         cycleDelayMs={3500}
       />
-    </p>
+    </div>
   );
 }

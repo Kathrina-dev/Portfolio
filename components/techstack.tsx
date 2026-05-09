@@ -15,6 +15,8 @@ import {
   FaLinux,
   FaGitAlt,
   FaGithub,
+  FaChevronUp,
+  FaChevronDown,
 } from "react-icons/fa";
 import { BsTypescript } from "react-icons/bs";
 import {
@@ -89,15 +91,15 @@ const TechStack = () => {
   const visibleTech = isOpen ? techstack : techstack.slice(0, 6);
 
   return (
-    <div className="mt-8 max-w-171">
-      <div className="flex items-center justify-between mb-4">
-        <h3 className="text-lg font-semibold text-black">Tech Stack</h3>
+    <div className="mx-auto pt-8 w-full max-w-7xl px-4 md:px-18 lg:px-20 xl:px-10">
+      <div className="flex items-center mb-4">
+        <h3 className="text-lg md:text-4xl text-black">Tech Stack</h3>
         <button
           aria-label={isOpen ? "Collapse tech list" : "Expand tech list"}
           onClick={() => setIsOpen((s) => !s)}
-          className="ml-3 px-2 py-1 rounded-md text-black hover:bg-black/5"
+          className="ml-3 px-3 py-2 rounded-md text-black"
         >
-          {isOpen ? "▴" : "▾"}
+          {isOpen ? <FaChevronUp /> : <FaChevronDown />}
         </button>
       </div>
 
@@ -112,7 +114,7 @@ const TechStack = () => {
               title={t}
             >
               {Icon && <Icon className="text-lg shrink-0" />}
-              <span className="text-xs lg:text-sm">{t}</span>
+              <span className="text-xs lg:text-sm font-mono">{t}</span>
             </button>
           );
         })}
