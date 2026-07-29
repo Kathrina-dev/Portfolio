@@ -12,7 +12,7 @@ export default function PixelatedCanvasDemo() {
 
     const updateSize = () => {
       const availableWidth = container.clientWidth;
-      setCanvasSize(Math.max(280, Math.min(availableWidth, 500)));
+      setCanvasSize(Math.max(300, Math.min(availableWidth, 800)));
     };
 
     updateSize();
@@ -24,7 +24,7 @@ export default function PixelatedCanvasDemo() {
   }, []);
 
   return (
-    <div ref={containerRef} className="w-full xl:ml-25 max-w-100 lg:max-w-125">
+    <div ref={containerRef} className="w-full max-w-[400px] sm:max-w-[500px] md:max-w-[600px] lg:max-w-[700px]">
       <PixelatedCanvas
         src="/avatar.jpeg"
         width={canvasSize}

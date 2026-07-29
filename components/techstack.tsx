@@ -37,9 +37,9 @@ const TechStack = () => {
   const techstack = [
     "NextJS",
     "ReactJS",
+    "NodeJS",
     "Tailwind CSS",
     "Typescript",
-    "NodeJS",
     "ExpressJS",
     "PostgreSQL",
     "Firebase",
@@ -63,9 +63,9 @@ const TechStack = () => {
   const icons: Record<string, IconType> = {
     NextJS: RiNextjsFill,
     ReactJS: FaReact,
+    NodeJS: FaNodeJs,
     "Tailwind CSS": RiTailwindCssFill,
     Typescript: BsTypescript,
-    NodeJS: FaNodeJs,
     ExpressJS: SiExpress,
     PostgreSQL: SiPostgresql,
     Firebase: RiFirebaseFill,
@@ -91,7 +91,7 @@ const TechStack = () => {
   const visibleTech = isOpen ? techstack : techstack.slice(0, 6);
 
   return (
-    <div className="mx-auto pt-8 w-full max-w-7xl px-4 md:px-18 lg:px-20 xl:px-10">
+    <div className="mx-auto w-full max-w-7xl px-4 md:px-18 lg:px-20 xl:px-10">
       <div className="flex items-center mb-4">
         <h3 className="text-lg md:text-4xl text-black">Tech Stack</h3>
         <button
