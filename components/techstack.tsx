@@ -93,11 +93,11 @@ const TechStack = () => {
   return (
     <div className="mx-auto w-full max-w-7xl px-4 md:px-18 lg:px-20 xl:px-10">
       <div className="flex items-center mb-4">
-        <h3 className="text-lg md:text-4xl text-black">Tech Stack</h3>
+        <h3 className="text-xl md:text-4xl text-black">Tech Stack</h3>
         <button
           aria-label={isOpen ? "Collapse tech list" : "Expand tech list"}
           onClick={() => setIsOpen((s) => !s)}
-          className="ml-3 px-3 py-2 rounded-md text-black"
+          className="ml-3 px-3 py-2 border-0 text-black"
         >
           {isOpen ? <FaChevronUp /> : <FaChevronDown />}
         </button>
