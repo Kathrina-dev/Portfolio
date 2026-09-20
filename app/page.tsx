@@ -3,10 +3,11 @@ import ProfileImage from "@/components/profile-image";
 import EncryptedTextDemoSecond from "@/components/encrypted-text-demo-2";
 import TechStack from "@/components/techstack";
 import Socials from "@/components/socials";
+import Projects from "@/components/projects";
 
 export default function Home() {
   return (
-    <main>
+    <main className="relative">
       <div className="w-full px-4 lg:px-8 py-12 md:py-15 flex flex-col md:flex-row items-center justify-center gap-12 lg:gap-32 xl:gap-40">
         <ProfileImage />
         <div className="flex flex-col items-center md:items-start text-center md:text-left">
@@ -24,6 +25,7 @@ export default function Home() {
       </div>
       <TechStack />
       <TimelineDemo />
+      <Projects />
     </main>
   );
 }
