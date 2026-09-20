@@ -35,13 +35,13 @@ import { IconType } from "react-icons";
 
 const TechStack = () => {
   const techstack = [
-    "NextJS",
-    "ReactJS",
     "NodeJS",
-    "Tailwind CSS",
     "Typescript",
+    "NextJS",
     "ExpressJS",
     "PostgreSQL",
+    "ReactJS",
+    "Tailwind CSS",
     "Firebase",
     "MongoDB",
     "Flutter",

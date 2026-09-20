@@ -64,9 +64,8 @@ function ProjectCard({ project }: { project: Project }) {
 export default function Projects() {
   return (
     <section className="w-full max-w-7xl mx-auto px-4 md:px-8 py-12">
-      <div className="mb-6">
-        <div className="inline-block bg-black text-white px-6 py-3 rounded-md">Projects</div>
-        <h2 className="mt-4 text-3xl md:text-4xl font-extrabold text-neutral-900 dark:text-neutral-100">
+      <div className="max-w-7xl mx-auto py-12 pb-0 mb-6">
+        <h2 className="text-xl md:text-4xl text-black">
           Selected Works
         </h2>
       </div>
