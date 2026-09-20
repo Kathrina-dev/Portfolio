@@ -21,7 +21,7 @@ export const ActivityCalendar = ({ username }: { username: string }) => {
         <GitHubCalendar
           username={username}
           theme={greyTheme}
-          blockSize={15}
+          blockSize={12}
           blockMargin={5}
           fontSize={16}
           colorScheme="light"
