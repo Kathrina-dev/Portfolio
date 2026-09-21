@@ -5,7 +5,7 @@ type Project = {
   image: string;
   description: string;
   github: string;
-  live: string;
+  live?: string;
 };
 
 const projects: Project[] = [
@@ -29,16 +29,20 @@ const projects: Project[] = [
 
 function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className="bg-white dark:bg-neutral-900 p-4 md:p-6 rounded-2xl shadow-sm hover:shadow-xl border border-neutral-200 dark:border-neutral-800 transition-all duration-300 group">
-      <div className="overflow-hidden rounded-xl">
-        <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
+    <article className="bg-white dark:bg-neutral-900 p-4 md:p-6 rounded-2xl shadow-sm hover:shadow-xl border border-neutral-200 dark:border-neutral-800 transition-all duration-300 group flex flex-col justify-between">
+      <div>
+        <div className="overflow-hidden rounded-xl">
+          <img src={project.image} alt={project.title} className="w-full h-80 object-cover" />
+        </div>
+        <div className="mt-4">
+          <h3 className="text-2xl font-bold text-neutral-800 dark:text-neutral-100">
+            {project.title}
+          </h3>
+          <p className="text-neutral-600 dark:text-neutral-400 mt-2">{project.description}</p>
+        </div>
       </div>
-      <div className="mt-4">
-        <h3 className="text-2xl font-bold text-neutral-800 dark:text-neutral-100">
-          {project.title}
-        </h3>
-        <p className="text-neutral-600 dark:text-neutral-400 mt-2">{project.description}</p>
-        <div className="mt-4 flex items-center gap-3">
+      <div className="mt-4 flex items-center gap-3">
+        {project.github && (
           <a
             href={project.github}
             target="_blank"
@@ -47,6 +51,8 @@ function ProjectCard({ project }: { project: Project }) {
           >
             GitHub
           </a>
+        )}
+        {project.live && (
           <a
             href={project.live}
             target="_blank"
@@ -55,7 +61,7 @@ function ProjectCard({ project }: { project: Project }) {
           >
             Live Demo
           </a>
-        </div>
+        )}
       </div>
     </article>
   );

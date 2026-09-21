@@ -15,6 +15,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Kathrina Elangbam",
   description: "Kathrina Elangbam Portfolio – aspiring software engineer & web developer",
+  icons: {
+    icon: "/k.png",
+    shortcut: "/k.png",
+    apple: "/k.png",
+  },
 };
 
 export default function RootLayout({
