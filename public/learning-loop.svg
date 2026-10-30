@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 220" role="img" aria-labelledby="title desc">
+  <title id="title">Learning loop diagram</title>
+  <desc id="desc">Question leads to experiment, experiment leads to reflection, and reflection leads to a better question.</desc>
+  <rect width="760" height="220" rx="18" fill="#fafafa"/>
+  <g fill="none" stroke="#171717" stroke-width="2">
+    <rect x="34" y="78" width="170" height="64" rx="10" fill="#fff"/>
+    <rect x="295" y="78" width="170" height="64" rx="10" fill="#fff"/>
+    <rect x="556" y="78" width="170" height="64" rx="10" fill="#fff"/>
+    <path d="M204 110h91m170 0h91"/>
+    <path d="m280 101 15 9-15 9m261-18 15 9-15 9"/>
+    <path d="M641 142c-12 48-85 58-180 58-124 0-194-15-207-58"/>
+    <path d="m266 150-12-9 2 17"/>
+  </g>
+  <g fill="#171717" font-family="Arial, sans-serif" font-size="17" text-anchor="middle">
+    <text x="119" y="115">Question</text>
+    <text x="380" y="115">Experiment</text>
+    <text x="641" y="115">Reflection</text>
+  </g>
+</svg>

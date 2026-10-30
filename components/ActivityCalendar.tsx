@@ -1,7 +1,11 @@
 "use client";
 
-import { cloneElement } from "react";
-import { GitHubCalendar } from "react-github-calendar";
+import dynamic from "next/dynamic";
+
+const GitHubCalendar = dynamic(
+  () => import("react-github-calendar").then((module) => module.GitHubCalendar),
+  { ssr: false },
+);
 
 const greyTheme = {
   light: ["#eeeeee", "#a0a0a0", "#444444", "#2c2c2c", "#131313"],

@@ -4,6 +4,7 @@ import EncryptedTextDemoSecond from "@/components/encrypted-text-demo-2";
 import TechStack from "@/components/techstack";
 import Socials from "@/components/socials";
 import Projects from "@/components/projects";
+import Blogs from "@/components/blogs";
 import { ActivityCalendar } from "@/components/ActivityCalendar";
 
 export default function Home() {
@@ -27,6 +28,7 @@ export default function Home() {
       <TechStack />
       <TimelineDemo />
       <Projects />
+      <Blogs />
       <ActivityCalendar username="Kathrina-dev" />
     </main>
   );
