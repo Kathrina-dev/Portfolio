@@ -13,7 +13,7 @@ const projects: Project[] = [
     title: "RAGbook",
     image: "/ragbook.jpeg",
     description:
-      "RAGbook is a web application that allows users to have conversations with their documents.",
+      "RAGbook is a web application that allows users to have conversations with their documents. Upload your documents, and RAGbook will answer your questions based on the content of those documents.",
     github: "https://github.com/Kathrina-dev/RAG-book",
     live: "https://ragbook.kathrinaelangbam.xyz/",
   },
