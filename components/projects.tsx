@@ -10,12 +10,12 @@ type Project = {
 
 const projects: Project[] = [
   {
-    title: "Roastify",
-    image: "/roastify.jpeg",
+    title: "RAGbook",
+    image: "/ragbook.png",
     description:
-      "Roastify is a web application that allows users to connect to their Spotify account and get a roast of their spotify listening history.",
-    github: "https://github.com/Kathrina-dev/Roastify",
-    live: "https://roastify-beta.vercel.app/",
+      "RAGbook is a web application that allows users to have conversations with their documents.",
+    github: "https://github.com/Kathrina-dev/RAG-book",
+    live: "https://ragbook.kathrinaelangbam.xyz/",
   },
   {
     title: "AWS n8n Canvas",
