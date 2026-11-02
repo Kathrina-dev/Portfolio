@@ -11,7 +11,7 @@ type Project = {
 const projects: Project[] = [
   {
     title: "RAGbook",
-    image: "/ragbook.png",
+    image: "/ragbook.jpeg",
     description:
       "RAGbook is a web application that allows users to have conversations with their documents.",
     github: "https://github.com/Kathrina-dev/RAG-book",
